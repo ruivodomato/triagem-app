@@ -1,19 +1,27 @@
-import "./globals.css";
-import { ReactNode } from "react";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
 
-export const metadata = {
-  title: "Triagem App",
-  description: "Aplicação de triagem em saúde",
-};
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+})
+
+export const metadata: Metadata = {
+  title: 'Triagem',
+  description: 'Aplicativo de triagem em saúde',
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className={inter.variable}>
+        {children}
+      </body>
     </html>
-  );
+  )
 }
