@@ -11,4 +11,7 @@ node_modules
 # logs
 npm-debug.log*
 pnpm-debug.log*
+android/
+out/
+
 
