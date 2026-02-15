@@ -1,23 +1,46 @@
-"use client";
-
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import ScreenContainer from "@/components/ScreenContainer";
-import { Title, ButtonPrimary, Card } from "@/components/ui";
 
-export default function HomePage() {
-  const router = useRouter();
-
+export default function Home() {
   return (
     <ScreenContainer>
-      <Title text="Triagem – Seu Guia de Bolso" />
-      <p style={{ opacity: 0.75 }}>
-        Responda algumas perguntas e receba orientações iniciais de saúde.
-      </p>
+      <h1 style={{ fontSize: 28, fontWeight: 900, marginBottom: 16 }}>
+        Triagem – Guia de Bolso
+      </h1>
 
-      <ButtonPrimary text="Iniciar Triagem" onClick={() => router.push("/sistemas")} />
+      <div style={{ display: "grid", gap: 10 }}>
+        <Link
+          href="/triagem/respiratorio"
+          style={{
+            padding: 14,
+            borderRadius: 14,
+            border: "1px solid #111827",
+            background: "#111827",
+            color: "#fff",
+            fontWeight: 800,
+            textDecoration: "none",
+            textAlign: "center",
+          }}
+        >
+          Começar – Respiratório
+        </Link>
 
-      <Card title="📜 Histórico" subtitle="Veja triagens anteriores" onClick={() => router.push("/historico")} />
-      <Card title="ℹ️ Sobre" subtitle="Avisos e informações do app" onClick={() => router.push("/sobre")} />
+        <Link
+          href="/historico"
+          style={{
+            padding: 14,
+            borderRadius: 14,
+            border: "1px solid #d1d5db",
+            background: "#fff",
+            color: "#111827",
+            fontWeight: 800,
+            textDecoration: "none",
+            textAlign: "center",
+          }}
+        >
+          Ver histórico
+        </Link>
+      </div>
     </ScreenContainer>
   );
 }
